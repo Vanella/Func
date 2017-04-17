@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html >
+<head>
+    <meta charset="UTF-8">
+    <title>第三方登录</title>
+<body>
+    <ul class="other">
+      <li class="qq">
+        <a href="/login/qq_login"><img src="/Public/img/qq.png" alt=""/></a>
+      </li>
+      <li class="wx">
+        <!--<img src="/Public/img/weixin.png" alt=""/>-->
+          <a href="javascript:;" onmouseover="show_weixin(this)" onmouseout="$('#weixin_login_container').hide()" title="微信登录" class="wx">
+              <img src="/Public/img/weixin.png" alt=""/>
+              <div id="weixin_login_container" style="display: none; top: 139px; left: -120px;"><iframe src="https://open.weixin.qq.com/connect/qrconnect?appid=wxe90917ea3eedece6&amp;scope=snsapi_login&amp;redirect_uri=http://www.lawtoutiao.com/connect/weixin/&amp;state=http://www.lawtoutiao.com/&amp;login_type=jssdk&amp;style=black" frameborder="0" scrolling="no" width="300px" height="400px"></iframe></div>
+          </a>
+      </li>
+      <li class="xl">
+        <a href="/login/sina_login"><img src="/Public/img/xinlang.png" alt=""/></a>
+      </li>
+    </ul>
+</body>
+</html>
