@@ -1,16 +1,10 @@
 <?php
 
-/**
- * Created by PhpStorm.
- * User: Administrator
- * Date: 2016/4/1
- * Time: 10:04
- */
 class sinaLogin {
 
-    private $appKey = '4235625728';
-    private $appSecret = '4a137662d66201b4161bbf64f173f3b8';
-    private $redirect_uri = 'http://m.lawtoutiao.com/login/sina_redirect_url';
+    private $appKey = '';
+    private $appSecret = '';
+    private $redirect_uri = '';
 
     public function __construct($appKey, $appSecret) {
         if (isset($appKey) && isset($appSecret)) {
@@ -24,9 +18,9 @@ class sinaLogin {
      * */
     public function getAuthorizationCode() {
         $response_type = 'code'; //必须	授权类型，此值固定为“code”。
-        $client_id = $this->appKey; //必须	申请QQ登录成功后，分配给应用的appid。
+        $client_id = $this->appKey; //必须	
         $redirect_uri = $this->redirect_uri;
-        $state = md5(uniqid(rand(), TRUE)); //必须    client端的状态值。用于第三方应用防止CSRF攻击，成功授权后回调时会原样带回。请务必严格按照流程检查用户与state参数状态的绑定。
+        $state = md5(uniqid(rand(), TRUE)); 
         $request_url = "https://api.weibo.com/oauth2/authorize?response_type=" . $response_type . "&client_id=" . $client_id . "&redirect_uri=" . $redirect_uri . "&state=" . $state . "&with_offical_account=" . 1;
         header("location:$request_url");
     }
